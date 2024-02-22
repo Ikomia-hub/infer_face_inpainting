@@ -203,7 +203,7 @@ class InferFaceInpainting(dataprocess.CSemanticSegmentationTask):
 
         if param.update or self.pipe is None:
             self.pipe = AutoPipelineForInpainting.from_pretrained(
-                                            "SG161222/RealVisXL_V4.0",
+                                            param.model_name_diff,
                                             torch_dtype=torch.float16,
                                             variant="fp16",
                                             cache_dir= self.model_folder).to(self.device)
