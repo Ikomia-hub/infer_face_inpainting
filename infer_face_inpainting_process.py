@@ -80,9 +80,9 @@ class InferFaceInpaintingParam(core.CWorkflowTaskParam):
         params = {}
         params["cuda"] = str(self.cuda)
         params["model_name_seg"] = str(self.model_name_seg)
-        params["dilatation_percent_face"] = str(self.update)
-        params["dilatation_percent_hair"] = str(self.update)
-        params["crop_percent_bottom_face"] = str(self.update)
+        params["dilatation_percent_face"] = str(self.dilatation_percent_face)
+        params["dilatation_percent_hair"] = str(self.dilatation_percent_hair)
+        params["crop_percent_bottom_face"] = str(self.crop_percent_bottom_face)
         params["mask_only"] = str(self.mask_only)
         params["model_name_diff"] = str(self.model_name_diff)
         params["prompt"] = str(self.prompt)
