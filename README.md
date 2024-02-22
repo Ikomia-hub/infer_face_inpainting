@@ -1,17 +1,17 @@
 <div align="center">
-  <img src="https://raw.githubusercontent.com/Ikomia-hub/infer_hf_semantic_seg/main/icons/icon.png" alt="Algorithm icon">
-  <h1 align="center">infer_hf_semantic_seg</h1>
+  <img src="https://raw.githubusercontent.com/Ikomia-hub/infer_face_inpainting/main/icons/icon.png" alt="Algorithm icon">
+  <h1 align="center">infer_face_inpainting</h1>
 </div>
 <br />
 <p align="center">
-    <a href="https://github.com/Ikomia-hub/infer_hf_semantic_seg">
-        <img alt="Stars" src="https://img.shields.io/github/stars/Ikomia-hub/infer_hf_semantic_seg">
+    <a href="https://github.com/Ikomia-hub/infer_face_inpainting">
+        <img alt="Stars" src="https://img.shields.io/github/stars/Ikomia-hub/infer_face_inpainting">
     </a>
     <a href="https://app.ikomia.ai/hub/">
         <img alt="Website" src="https://img.shields.io/website/http/app.ikomia.ai/en.svg?down_color=red&down_message=offline&up_message=online">
     </a>
-    <a href="https://github.com/Ikomia-hub/infer_hf_semantic_seg/blob/main/LICENSE.md">
-        <img alt="GitHub" src="https://img.shields.io/github/license/Ikomia-hub/infer_hf_semantic_seg.svg?color=blue">
+    <a href="https://github.com/Ikomia-hub/infer_face_inpainting/blob/main/LICENSE.md">
+        <img alt="GitHub" src="https://img.shields.io/github/license/Ikomia-hub/infer_face_inpainting.svg?color=blue">
     </a>    
     <br>
     <a href="https://discord.com/invite/82Tnw9UGGc">
