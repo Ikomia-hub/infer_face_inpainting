@@ -1,0 +1,2 @@
+matei-dorian/segformer-b5-finetuned-human-parsing
+mattmdjaga/segformer_b2_clothes
