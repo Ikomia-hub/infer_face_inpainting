@@ -81,6 +81,7 @@ algo.set_parameters({
         "dilatation_percent_hair":"0.03",
         "crop_percent_bottom_face":"0.22",
         "mask_only":"False",
+        "model_name_diff": "SG161222/RealVisXL_V4.0",
         "prompt":"high quality, portrait photo, detailed face, skin pores, no makeup",
         "negative_prompt":"(face asymmetry, eyes asymmetry, deformed eyes, open mouth)",
         "guidance_scale":"7.5",
