@@ -55,12 +55,24 @@ display(algo.get_output(3).get_image())
 ## :sunny: Use with Ikomia Studio
 
 Ikomia Studio offers a friendly UI with the same features as the API.
-
 - If you haven't started using Ikomia Studio yet, download and install it from [this page](https://www.ikomia.ai/studio).
-
 - For additional guidance on getting started with Ikomia Studio, check out [this blog post](https://www.ikomia.ai/blog/how-to-get-started-with-ikomia-studio).
 
 ## :pencil: Set algorithm parameters
+
+- **model_name_seg** (str) - default 'matei-dorian/segformer-b5-finetuned-human-parsing': Name of the segmentation model. Other model available:
+    - mattmdjaga/segformer_b2_clothes
+- **dilatation_percent_face** (float) - default '0.001': Dilation percentage of the face mask.
+- **dilatation_percent_hair** (float) - default '0.03': Dilation percentage of the hair mask.
+- **crop_percent_bottom_face** (float) - default '0.05': The mask is generated accross the hair, face and neck. In case you don't want the neck to be segmented you crop this part by increasing the percentage.
+- **nask_only** (bool) - default 'False': If True, only the segmentation step will be done. This allows for quick segmentation mask adjustement before doing the inpainting. 
+- **model_name_diff** (str) - default 'SG161222/RealVisXL_V4.0': Name of the stable diffusion model. Other model available:
+- **prompt** (str): Text prompt to guide the image generation.
+- **negative_prompt** (str, *optional*): The prompt not to guide the image generation. Ignored when not using guidance (i.e., ignored if `guidance_scale` is less than `1`).
+- **num_inference_steps** (int) - default '40': Number of denoising steps (minimum: 1; maximum: 500). For 'sdxl-turbo' we recommend using between 1 and 4 steps.
+- **guidance_scale** (float) - default '7.5': Scale for classifier-free guidance (minimum: 1; maximum: 20). For 'sdxl-turbo' guidance scale will be updated to 0.
+- **strength** (int) - default '0.2':  Conceptually, indicates how much to transform the reference image. Must be between 0 and 1. image will be used as a starting point, adding more noise to it the larger the strength. The number of denoising steps depends on the amount of noise initially added. When strength is 1, added noise will be maximum and the denoising process will run for the full number of iterations specified in num_inference_steps. A value of 1, therefore, essentially ignores image.
+- **seed** (int) - default '-1': Seed value. '-1' generates a random number between 0 and 191965535.
 
 
 **Parameters** should be in **strings format**  when added to the dictionary.
@@ -124,3 +136,22 @@ for output in algo.get_outputs():
     # Export it to JSON
     output.to_json()
 ```
+
+
+## ::page_with_curl:: Citation
+
+- Segformer
+    - [Documentation](https://arxiv.org/abs/2105.15203)
+    - [Code source](https://github.com/NVlabs/SegFormer)   
+
+```bibtex
+@article{kirillov2023segany,
+  title={Segment Anything},
+  author={Kirillov, Alexander and Mintun, Eric and Ravi, Nikhila and Mao, Hanzi and Rolland, Chloe and Gustafson, Laura and Xiao, Tete and Whitehead, Spencer and Berg, Alexander C. and Lo, Wan-Yen and Doll{\'a}r, Piotr and Girshick, Ross},
+  journal={arXiv:2304.02643},
+  year={2023}
+}
+```
+
+- RealVisXL v4.0
+    - [Documentation](https://civitai.com/models/139562/realvisxl-v40)
