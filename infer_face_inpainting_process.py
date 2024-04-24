@@ -50,7 +50,7 @@ class InferFaceInpaintingParam(core.CWorkflowTaskParam):
         self.prompt = "high quality, portrait photo, detailed face, skin pores, no makeup"
         self.negative_prompt = '(face asymmetry, eyes asymmetry, deformed eyes, open mouth)'
         self.guidance_scale = 7.5
-        self.num_inference_steps = 40
+        self.num_inference_steps = 50
         self.strength = 0.75
         self.seed = -1
         self.update = False
@@ -326,7 +326,7 @@ class InferFaceInpaintingFactory(dataprocess.CTaskFactory):
         self.info.original_repository = ""
         # Keywords used for search
         self.info.keywords = "semantic, segmentation, inference, transformer,"\
-                            "Hugging Face, Diffusion,SDXL, RealVisXL"
+                            "Hugging Face, Diffusion,SDXL, RealVisXL, inpainting"
         self.info.algo_type = core.AlgoType.INFER
         self.info.algo_tasks = "INPAINTING"
 
