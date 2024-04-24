@@ -27,6 +27,7 @@ Replace faces using diffusion inpainting. This algorithm uses Segformer for segm
 #### 1. Install Ikomia API
 
 We strongly recommend using a virtual environment. If you're not sure where to start, we offer a tutorial [here](https://www.ikomia.ai/blog/a-step-by-step-guide-to-creating-virtual-environments-in-python).
+![illustration](https://raw.githubusercontent.com/Ikomia-hub/infer_face_inpainting/main/icons/inference_steps.jpg)
 
 ```sh
 pip install ikomia
@@ -95,7 +96,7 @@ algo.set_parameters({
         "crop_percent_bottom_face":"0.22",
         "mask_only":"False",
         "model_name_diff": "SG161222/RealVisXL_V4.0",
-        "prompt":"high quality, portrait photo, detailed face, skin pores, no makeup",
+        "prompt":"high quality, portrait photo, blond hair, detailed face, skin pores, no makeup",
         "negative_prompt":"(face asymmetry, eyes asymmetry, deformed eyes, open mouth)",
         "guidance_scale":"7.5",
         "num_inference_steps":"50",
