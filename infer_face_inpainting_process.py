@@ -318,6 +318,7 @@ class InferFaceInpaintingFactory(dataprocess.CTaskFactory):
         self.info.article = ""
         self.info.journal = ""
         self.info.license = "Creative ML OpenRAIL-M license"
+        self.info.year = 2024
         # URL of documentation
         self.info.documentation_link = ""
         # Code source repository
