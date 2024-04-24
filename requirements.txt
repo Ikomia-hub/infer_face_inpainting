@@ -1,12 +1,13 @@
---find-links https://download.pytorch.org/whl/torch_stable.html
-torch==2.1.2+cu118
-torchvision==0.16.2+cu118
+# diffusers>=0.26.0 only compatible with torch>=1.10.0
 
-accelerate==0.26.1
-ikomia==0.10.0
-diffusers==0.26.0
-opencv-python==4.9.0.80
-pillow==10.2.0
-safetensors==0.4.2
-timm==0.9.12
-transformers==4.37.2
+--find-links https://download.pytorch.org/whl/torch_stable.html
+torch==2.1.2+cu121; python_version >= "3.11"
+torchvision==0.16.2+cu121; python_version >= "3.11"
+torch==1.13.1+cu116; python_version == "3.10"
+torchvision==0.14.1+cu116; python_version == "3.10"
+
+diffusers>=0.26.0, <=0.26.1
+transformers>=4.37.2, <=5.0
+accelerate>=0.26.1, <=0.26.1
+pillow>=10.0.0
+timm>=0.9.12
