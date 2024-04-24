@@ -42,7 +42,7 @@ class InferFaceInpaintingParam(core.CWorkflowTaskParam):
         # Place default value initialization here
         self.cuda = torch.cuda.is_available()
         self.model_name_seg = "matei-dorian/segformer-b5-finetuned-human-parsing"
-        self.dilatation_percent_face = 0.0
+        self.dilatation_percent_face = 0.001
         self.dilatation_percent_hair = 0.03
         self.crop_percent_bottom_face = 0.05
         self.mask_only = False
@@ -50,7 +50,7 @@ class InferFaceInpaintingParam(core.CWorkflowTaskParam):
         self.prompt = "high quality, portrait photo, detailed face, skin pores, no makeup"
         self.negative_prompt = '(face asymmetry, eyes asymmetry, deformed eyes, open mouth)'
         self.guidance_scale = 7.5
-        self.num_inference_steps = 50
+        self.num_inference_steps = 40
         self.strength = 0.75
         self.seed = -1
         self.update = False
@@ -119,6 +119,7 @@ class InferFaceInpainting(dataprocess.CSemanticSegmentationTask):
         self.update = False
         self.model_folder = os.path.join(os.path.dirname(os.path.realpath(__file__)), "weights")
         self.generator = None
+        self.seed = None
 
     def get_progress_steps(self):
         # Function returning the number of progress steps for this process
@@ -308,7 +309,7 @@ class InferFaceInpaintingFactory(dataprocess.CTaskFactory):
         dataprocess.CTaskFactory.__init__(self)
         # Set process information as string here
         self.info.name = "infer_face_inpainting"
-        self.info.short_description = "Face inpainting"
+        self.info.short_description = "Face inpainting using Segformer for segmentation and RealVisXL for inpainting."
         # relative path -> as displayed in Ikomia application process tree
         self.info.path = "Plugins/Python/Inpaint"
         self.info.version = "1.1.1"
@@ -316,15 +317,15 @@ class InferFaceInpaintingFactory(dataprocess.CTaskFactory):
         self.info.authors = ""
         self.info.article = ""
         self.info.journal = ""
-        self.info.license = "Apache License Version 2.0"
+        self.info.license = "Creative ML OpenRAIL-M license"
         # URL of documentation
         self.info.documentation_link = ""
         # Code source repository
-        self.info.repository = ""
+        self.info.repository = "https://github.com/Ikomia-hub/infer_face_inpainting"
         self.info.original_repository = ""
         # Keywords used for search
         self.info.keywords = "semantic, segmentation, inference, transformer,"\
-                            "Hugging Face, Diffusion,"
+                            "Hugging Face, Diffusion,SDXL, RealVisXL"
         self.info.algo_type = core.AlgoType.INFER
         self.info.algo_tasks = "INPAINTING"
 
