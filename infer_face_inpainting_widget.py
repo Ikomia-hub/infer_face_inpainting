@@ -75,7 +75,6 @@ class InferFaceInpaintingWidget(core.CWorkflowTaskWidget):
                                                         min=0, step=0.01, decimals=3
                                                     )
 
-
         self.spin_dilatation_percent_hair = pyqtutils.append_double_spin(
                                                         self.grid_layout,
                                                         "Hair mask dilatation (%)",
