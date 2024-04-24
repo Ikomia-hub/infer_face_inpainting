@@ -68,12 +68,15 @@ Ikomia Studio offers a friendly UI with the same features as the API.
 - **dilatation_percent_hair** (float) - default '0.03': Dilation percentage of the hair mask.
 - **crop_percent_bottom_face** (float) - default '0.05': The mask is generated accross the hair, face and neck. In case you don't want the neck to be segmented you crop this part by increasing the percentage.
 - **nask_only** (bool) - default 'False': If True, only the segmentation step will be done. This allows for quick segmentation mask adjustement before doing the inpainting. 
-- **model_name_diff** (str) - default 'SG161222/RealVisXL_V4.0': Name of the stable diffusion model. Other model available:
+- **model_name_diff** (str) - default 'SG161222/RealVisXL_V4.0': Name of the stable diffusion model.
+
+*Note: for faster inference with less than 10 steps, use 'SG161222/RealVisXL_V4.0_Lightning' with guidance_scale=1-2*
+
 - **prompt** (str): Text prompt to guide the image generation.
 - **negative_prompt** (str, *optional*): The prompt not to guide the image generation. Ignored when not using guidance (i.e., ignored if `guidance_scale` is less than `1`).
-- **num_inference_steps** (int) - default '40': Number of denoising steps (minimum: 1; maximum: 500). For 'sdxl-turbo' we recommend using between 1 and 4 steps.
-- **guidance_scale** (float) - default '7.5': Scale for classifier-free guidance (minimum: 1; maximum: 20). For 'sdxl-turbo' guidance scale will be updated to 0.
-- **strength** (int) - default '0.2':  Conceptually, indicates how much to transform the reference image. Must be between 0 and 1. image will be used as a starting point, adding more noise to it the larger the strength. The number of denoising steps depends on the amount of noise initially added. When strength is 1, added noise will be maximum and the denoising process will run for the full number of iterations specified in num_inference_steps. A value of 1, therefore, essentially ignores image.
+- **num_inference_steps** (int) - default '50': Number of denoising steps (minimum: 1; maximum: 500). For 'RealVisXL_V4.0_Lightning' we recommend using between 5 and 10 steps.
+- **guidance_scale** (float) - default '7.5': Scale for classifier-free guidance (minimum: 1; maximum: 20). For 'RealVisXL_V4.0_Lightning' we recommend using 0 and 2.
+- **strength** (int) - default '0.75':  Conceptually, indicates how much to transform the reference image. Must be between 0 and 1. image will be used as a starting point, adding more noise to it the larger the strength. The number of denoising steps depends on the amount of noise initially added. When strength is 1, added noise will be maximum and the denoising process will run for the full number of iterations specified in num_inference_steps. A value of 1, therefore, essentially ignores image.
 - **seed** (int) - default '-1': Seed value. '-1' generates a random number between 0 and 191965535.
 
 
