@@ -20,6 +20,7 @@
 </p>
 
 
+Replace faces using diffusion inpainting. This algorithm uses Segformer for segmentation and RealVisXL V4.0 for inpainting.
 
 ## :rocket: Use with Ikomia API
 
@@ -138,7 +139,7 @@ for output in algo.get_outputs():
 ```
 
 
-## ::page_with_curl:: Citation
+## :page_with_curl: Citation
 
 - Segformer
     - [Documentation](https://arxiv.org/abs/2105.15203)
