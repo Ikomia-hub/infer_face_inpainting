@@ -22,6 +22,8 @@
 
 Replace faces using diffusion inpainting. This algorithm uses Segformer for segmentation and RealVisXL V4.0 for inpainting.
 
+This algorithm requires at least 13GB GPU VRAM to run. 
+
 ## :rocket: Use with Ikomia API
 
 #### 1. Install Ikomia API
