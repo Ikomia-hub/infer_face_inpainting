@@ -209,6 +209,7 @@ class InferFaceInpainting(dataprocess.CSemanticSegmentationTask):
                                             variant="fp16",
                                             cache_dir= self.model_folder).to(self.device)
             self.scheduler = DPMSolverMultistepScheduler.from_config(self.pipe.scheduler.config, use_karras_sigmas=True)
+            param.update = False
 
         # Convert to PIL
         image_input = Image.fromarray(image)
