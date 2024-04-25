@@ -325,6 +325,8 @@ class InferFaceInpaintingFactory(dataprocess.CTaskFactory):
         # Code source repository
         self.info.repository = "https://github.com/Ikomia-hub/infer_face_inpainting"
         self.info.original_repository = ""
+        # Python version
+        self.info.min_python_version = "3.10.0"
         # Keywords used for search
         self.info.keywords = "semantic, segmentation, inference, transformer,"\
                             "Hugging Face, Diffusion,SDXL, RealVisXL, inpainting"
