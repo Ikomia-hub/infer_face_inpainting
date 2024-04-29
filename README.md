@@ -69,7 +69,7 @@ Ikomia Studio offers a friendly UI with the same features as the API.
 - **dilatation_percent_face** (float) - default '0.001': Dilation percentage of the face mask.
 - **dilatation_percent_hair** (float) - default '0.03': Dilation percentage of the hair mask.
 - **crop_percent_bottom_face** (float) - default '0.05': The mask is generated accross the hair, face and neck. In case you don't want the neck to be segmented you crop this part by increasing the percentage.
-- **nask_only** (bool) - default 'False': If True, only the segmentation step will be done. This allows for quick segmentation mask adjustement before doing the inpainting. 
+- **mask_only** (bool) - default 'False': If True, only the segmentation step will be done. This allows for quick segmentation mask adjustement before doing the inpainting. 
 - **model_name_diff** (str) - default 'SG161222/RealVisXL_V4.0': Name of the stable diffusion model.
 
 *Note: for faster inference with less than 10 steps, use 'SG161222/RealVisXL_V4.0_Lightning' with guidance_scale=1-2*
@@ -124,7 +124,6 @@ display(algo.get_output(3).get_image())
 Every algorithm produces specific outputs, yet they can be explored them the same way using the Ikomia API. For a more in-depth understanding of managing algorithm outputs, please refer to the [documentation](https://ikomia-dev.github.io/python-api-documentation/advanced_guide/IO_management.html).
 
 ```python
-import ikomia
 from ikomia.dataprocess.workflow import Workflow
 
 # Init your workflow
